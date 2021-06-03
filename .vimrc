@@ -340,3 +340,6 @@ endfunction
 " START vim-hashicorp-terraform
 let g:terraform_align = 1
 " END vim-hashicorp-terraform
+
+" Don't fix no end of line (in case you edit a joplin file)
+set nofixendofline
