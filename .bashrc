@@ -19,6 +19,7 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -135,6 +136,6 @@ if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
  export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
 fi
 
-SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export SSH_AUTH_SOCK
-export NMAP_PRIVILEGED=" "
+#SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+#export SSH_AUTH_SOCK
+export NMAP_PRIVILEGED=""
