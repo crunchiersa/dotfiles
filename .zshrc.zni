@@ -1,8 +1,0 @@
-# The following lines were added by compinstall
-
-zstyle ':completion:*' matcher-list '+'
-zstyle :compinstall filename '/home/martin/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
