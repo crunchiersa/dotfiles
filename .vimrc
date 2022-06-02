@@ -343,3 +343,6 @@ let g:terraform_align = 1
 
 " Don't fix no end of line (in case you edit a joplin file)
 set nofixendofline
+
+" Command to overwrite sudo needed for file-save
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
