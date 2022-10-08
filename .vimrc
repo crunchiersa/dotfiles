@@ -120,14 +120,14 @@ set ffs=unix,dos,mac
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-set expandtab
+"set expandtab
 
 " Be smart when using tabs ;)
-set smarttab
+"set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+"set shiftwidth=4
+"set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
