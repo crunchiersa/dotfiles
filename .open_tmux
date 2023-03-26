@@ -1,0 +1,7 @@
+#!/bin/bash
+if ( [ "$HOST" == "serenity" ] || [ "$HOSTNAME" == "serenity" ] ) && [ -z "$TMUX" ]; then
+        echo "open Tmux"
+        #tmux attach || tmux new-session
+else
+        echo "inside tmux"
+fi
