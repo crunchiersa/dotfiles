@@ -139,3 +139,9 @@ fi
 #SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 #export SSH_AUTH_SOCK
 export NMAP_PRIVILEGED=""
+
+# open tmux automatically
+if ( [ "$HOST" == "serenity" ] || [ "$HOSTNAME" == "serenity" ] ) && [ -z "$TMUX" ]; then
+        #echo "open Tmux"
+        tmux attach || tmux new-session
+fi
