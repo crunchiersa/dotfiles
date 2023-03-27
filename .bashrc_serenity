@@ -137,13 +137,12 @@ if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
  export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
 fi
 
-if ([ "$HOST" == "serenity" ] || [ "$HOSTNAME" == "serenity" ] ) && [ -z "$TMUX" ]; then
-	eval $(ssh-agent -s)
-	SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-	export SSH_AUTH_SOCK
-fi
-
 export NMAP_PRIVILEGED=""
+
+# set SSH_AUTH_SOCK for ssh-agent.
+# => systemd service for ssh-agent: https://wiki.archlinux.org/title/SSH_keys - chapter 4
+SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export SSH_AUTH_SOCK
 
 # open tmux automatically
 if ( [ "$HOST" == "serenity" ] || [ "$HOSTNAME" == "serenity" ] ) && [ -z "$TMUX" ]; then
