@@ -45,3 +45,5 @@ alias portainer='docker run -d -p 127.0.0.1:9443:9443 --name=portainer --restart
 alias iscsi_connect='sudo iscsiadm -m node -T iqn.2004-04.com.qnap:ts-435xeu:iscsi.serenity.7b8471 -l'
 alias iscsi_disconnect='sudo iscsiadm -m node -T iqn.2004-04.com.qnap:ts-435xeu:iscsi.serenity.7b8471 -u'
 alias update_cs='sudo cscli hub update && sudo cscli hub upgrade'
+alias scanhome='sudo clamscan --recursive --infected /home/martin'
+alias scanall='sudo clamscan --recursive --infected --exclude-dir="^/sys|^/dev" /'
