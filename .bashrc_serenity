@@ -143,6 +143,8 @@ export NMAP_PRIVILEGED=""
 # => systemd service for ssh-agent: https://wiki.archlinux.org/title/SSH_keys - chapter 4
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export SSH_AUTH_SOCK
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#gpgconf --launch gpg-agent
 
 # open tmux automatically
 if ( [ "$HOST" == "serenity" ] || [ "$HOSTNAME" == "serenity" ] ) && [ -z "$TMUX" ]; then
