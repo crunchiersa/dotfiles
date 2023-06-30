@@ -2,7 +2,7 @@
 
 # Find all dot files then if the original file exists, create a backup
 # Once backed up to {file}.dtbak symlink the new dotfile in place
-for file in $(find ~ -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
+for file in $(find ~ -maxdepth 1 -name ".* ! .gitconfig"  -type f  -printf "%f\n" ); do
     if [ -e ~/$file ]; then
         mv -f ~/$file{,.dtbak}
     fi
