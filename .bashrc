@@ -8,7 +8,7 @@ case $- in
       *) return;;
 esac
 
-export PATH=/home/martin/bin:/home/martin/bin/ownscripts:/home/martin/bin/security-scripts:/home/martin/bin/development:/home/martin/bin/mysql-scripts:/home/martin/bin/backup-scripts:/home/martin/bin/Skripte:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=/Users/martin/bin:/Users/martin/bin/ownscripts:/Users/martin/bin/security-scripts:/Users/martin/bin/development:/Users/martin/bin/mysql-scripts:/Users/martin/bin/backup-scripts:/Users/martin/bin/Skripte:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
