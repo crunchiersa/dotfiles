@@ -110,7 +110,7 @@ PATH="/Applications/jtr/run:/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:$P
 autoload -Uz compinit
 compinit
 #PS1="%B%F{magenta}%n%f%b%F{red}@%f%B%F{red}%m%f%b:%F{2}%d%f%F{184} $ %f"
-PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%H:%M:%S}] '$PROMPT
+PROMPT='%{$fg[yellow]%}[%D{%f.%m.%Y} %D{%H:%M:%S}] '$PROMPT
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTTIMEFORMAT="%Y-%m-%d %T "
