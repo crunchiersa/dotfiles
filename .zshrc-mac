@@ -21,15 +21,15 @@ ZSH_THEME="agnoster"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -106,11 +106,11 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-PATH="/Applications/jtr/run:/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:$PATH"
-autoload -Uz compinit
-compinit
+PATH="/Applications/jtr/run:/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:$HOME/nsupdate:$HOME/ansible:$PATH"
+#autoload -Uz compinit
+#compinit
 #PS1="%B%F{magenta}%n%f%b%F{red}@%f%B%F{red}%m%f%b:%F{2}%d%f%F{184} $ %f"
-PROMPT='%{$fg[yellow]%}[%D{%f.%m.%Y} %D{%H:%M:%S}] '$PROMPT
+#PROMPT='%{$fg[yellow]%}[%D{%f.%m.%Y} %D{%H:%M:%S}] '$PROMPT
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTTIMEFORMAT="%Y-%m-%d %T "
