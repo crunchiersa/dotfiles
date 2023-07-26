@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$HOME/nsupdate:$HOME/bin:$HOME/bin/ownscripts:$HOME/bin/security-scripts:$HOME/bin/development:$HOME/bin/mysql-scripts:$HOME/bin/backup-scripts:$HOME/bin/Skripte:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/opt/python/libexec/bin:$HOME/.local/lib/python3.10/site-packages:$PATH
+export PATH="$HOME/nsupdate:$HOME/bin:$HOME/bin/ownscripts:$HOME/bin/security-scripts:$HOME/bin/development:$HOME/bin/mysql-scripts:$HOME/bin/backup-scripts:$HOME/bin/Skripte:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/opt/python/libexec/bin:$HOME/.local/lib/python3.10/site-packages:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
