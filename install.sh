@@ -39,7 +39,7 @@ check_exist () {
 check_os
 
 # Backup dotfiles and link to local versions
-for file in $(find ~/dotfiles -maxdepth 1 -name ".*" ! -name ".zshrc*" -type f  -printf "%f\n" ); do
+for file in $(find ~/dotfiles -maxdepth 1 -name ".*" ! -name ".zshrc*" ! -name ".zcompdum*" -type f  -printf "%f\n" ); do
 	check_exist $file
 	if [ $? == 2 ]; then
 		unlink_mv_file ~/$file
