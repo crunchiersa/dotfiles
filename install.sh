@@ -50,9 +50,9 @@ if [ -e ~/.zshrc ]; then
 fi 
 
 if [ -e ~/.zshrc-theme ]; then
-	if [ -L ~/.zshrc ]; then
+	if [ -L ~/.zshrc-theme ]; then
 		unlink ~/.zshrc-theme
-	elif [ -f ~/.zshrc ]; then
+	elif [ -f ~/.zshrc-theme ]; then
 		mv -f ~/.zshrc-theme{,.dtbak}
 	fi
 fi 
