@@ -8,7 +8,7 @@ check_os () {
 	fi
 	if [ -z $os ]; then 
 		which apt
-		[ $? == 0 ]; then
+		if [ $? == 0 ]; then
 			os=linux
 		fi
 	fi
@@ -41,8 +41,13 @@ done
 check_os
 
 # link .zshrc and theme file according to the os
-if [ -f ~/.zshrc ]; then
-	mv -f ~/.zshrc{,.dtbak}
+if [ -e ~/.zshrc ]; then
+	if [ -L ~/.zshrc ]; then
+		unlink ~/.zshrc
+	elif [ -f ~/.zshrc ]; then
+		mv -f ~/.zshrc{,.dtbak}
+	fi
+
 	if [ $os == linux ];then
 		ln -s ~/dotfiles/.zshrc-linux ~/.zshrc
 		ln -s ~/dotfiles/.zshrc-linux-agnoster ~/.zshrc-theme
