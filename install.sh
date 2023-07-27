@@ -47,16 +47,16 @@ if [ -e ~/.zshrc ]; then
 	elif [ -f ~/.zshrc ]; then
 		mv -f ~/.zshrc{,.dtbak}
 	fi
+fi 
 
-	if [ $os == linux ];then
-		ln -s ~/dotfiles/.zshrc-linux ~/.zshrc
-		ln -s ~/dotfiles/.zshrc-linux-agnoster ~/.zshrc-theme
-	elif [ $os == mac ];then
-		ln -s ~/dotfiles/.zshrc-mac ~/.zshrc
-		ln -s ~/dotfiles/.zshrc-mac-agnoster ~/.zshrc-theme
-	else
-		echo "Unknown OS - no .zshrc placed"
-	fi
+if [ $os == linux ];then
+	ln -s ~/dotfiles/.zshrc-linux ~/.zshrc
+	ln -s ~/dotfiles/.zshrc-linux-agnoster ~/.zshrc-theme
+elif [ $os == mac ];then
+	ln -s ~/dotfiles/.zshrc-mac ~/.zshrc
+	ln -s ~/dotfiles/.zshrc-mac-agnoster ~/.zshrc-theme
+else
+	echo "Unknown OS - no .zshrc placed"
 fi
 
 if [ ! -f .bash_aliases ]; then
