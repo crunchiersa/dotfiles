@@ -49,6 +49,14 @@ if [ -e ~/.zshrc ]; then
 	fi
 fi 
 
+if [ -e ~/.zshrc-theme ]; then
+	if [ -L ~/.zshrc ]; then
+		unlink ~/.zshrc-theme
+	elif [ -f ~/.zshrc ]; then
+		mv -f ~/.zshrc-theme{,.dtbak}
+	fi
+fi 
+
 if [ $os == linux ];then
 	ln -s ~/dotfiles/.zshrc-linux ~/.zshrc
 	ln -s ~/dotfiles/.zshrc-linux-agnoster ~/.zshrc-theme
