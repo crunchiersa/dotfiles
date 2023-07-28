@@ -9,8 +9,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
-#ZSH_THEME=""
+#ZSH_THEME="agnoster"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -113,7 +113,7 @@ PATH="$HOME/bin:$HOME/nsupdate:$HOME/ansible:$PATH"
 #compinit
 #PS1="%B%F{magenta}%n%f%b%F{red}@%f%B%F{red}%m%f%b:%F{2}%d%f%F{184} $ %f"
 #PROMPT='%{$fg[yellow]%}[%D{%f.%m.%Y} %D{%H:%M:%S}] '$PROMPT
-#source $HOME/.zshrc-theme
+source $HOME/.zshrc-theme
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTTIMEFORMAT="%Y-%m-%d %T "
