@@ -111,8 +111,6 @@ fi
 
 #autoload -Uz compinit
 #compinit
-#PS1="%B%F{magenta}%n%f%b%F{red}@%f%B%F{red}%m%f%b:%F{2}%d%f%F{184} $ %f"
-#PROMPT='%{$fg[yellow]%}[%D{%f.%m.%Y} %D{%H:%M:%S}] '$PROMPT
 source $HOME/.zshrc-theme
 HISTSIZE=1000
 HISTFILESIZE=2000
