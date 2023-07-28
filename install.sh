@@ -1,4 +1,9 @@
 #!/bin/bash
+## Author: crunchie
+## Description: Script to automatically link up certain files in home-directory to pre-built versions.
+## 				Backups of currently installed versions are made in a .dtbak-file. 
+##				Links the .zshrc file to different files depending on whether a linux or mac platform is in use.
+##				oh-my-zsh needs to be installed as the pre-built .zshrc files depend on it. An adapted Agnoster-prompt is used in the theme-file.
 
 # function to check if mac or linux
 check_os () {
@@ -36,6 +41,7 @@ check_exist () {
 
 ## EXECUTE begins here
 
+# Check whether linux or macos is used
 check_os
 
 # Backup dotfiles and link to local versions
@@ -58,6 +64,7 @@ do
 	fi
 done 
 
+# link the .zshrc-file in home-directory depending on the underlying os
 if [ $os == linux ];then
 	ln -s ~/dotfiles/.zshrc-linux ~/.zshrc
 	ln -s ~/dotfiles/.zshrc-linux-agnoster ~/.zshrc-theme
