@@ -1,14 +1,61 @@
 #!/bin/bash
+## Author: crunchie
+## Description: Script to remove any symlinks to dotfiles and restore existing .dtbak-files
 
-# Loop through all the dotfiles, if the file is a symlink then remove it
-# Then if the backup file exists, restore it to it's original location
-for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
-    if [ -h ~/$file ]; then
-        rm -f ~/$file
+check_location () {
+    if [ `pwd` == "$HOME/dotfiles" ]; then
+	    echo "Please leave dotfile folder to uninstall dotfiles."
+        exit 2
     fi
-    if [ -e ~/${file}.dtbak ]; then
-        mv -f ~/$file{.dtbak,}
+}
+
+# function to unlink symlink or mv .dtbak-file to original name
+unlink_file () {
+	local file=$1
+	if [ -e $file ]; then
+		if [ -L $file ]; then
+			unlink $file
+		fi
+	fi
+}
+
+# function to check if the file exists in the home directory
+# return parameters: 2 = file exists, 3 = file does not exist
+check_exist () {
+	local file=$1
+	if [ -e ~/$file ]; then
+		return 2
+	else
+		return 3
+	fi
+}
+
+## EXECUTE begins here
+
+# check if user is currently inside dotfiles-folder
+check_location
+
+# Unlink any links in ~ and mv .dtbak-files to original location
+for file in $(find ~/dotfiles -maxdepth 1 -name ".*" ! -name ".zshrc*" ! -name ".zcompdum*" ! -name ".*history*" -type f  -printf "%f\n" ); do
+	check_exist ~/$file.dtbak
+	if [ $? == 2 ]; then
+        unlink_file ~/$file
+		mv -f ~/$file{.dtbak,}
     fi
 done
 
-echo "Uninstalled"
+# Unlink or move existing .zshrc config or .zshrc-theme 
+for file in .zshrc .zshrc-theme
+do
+	check_exist ~/$file.dtbak
+	if [ $? == 2 ]; then
+		unlink_file ~/$file
+        mv -f ~/$file{.dtbak,}
+	fi
+done 
+
+# Remove dotfiles-folder in home-directory.
+rm -rf $HOME/dotfiles
+
+echo "Removal done."
+exit 0

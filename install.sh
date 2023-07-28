@@ -55,7 +55,7 @@ for file in $(find ~/dotfiles -maxdepth 1 -name ".*" ! -name ".zshrc*" ! -name "
 	fi
 done
 
-# Unlink or move .zshrc config 
+# Unlink or move existing .zshrc config or .zshrc-theme 
 for file in .zshrc .zshrc-theme
 do
 	check_exist $file
