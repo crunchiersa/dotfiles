@@ -38,10 +38,11 @@ check_location
 # Unlink any links in ~ and mv .dtbak-files to original location
 for file in $(find ~/dotfiles -maxdepth 1 -name ".*" ! -name ".zshrc*" ! -name ".zcompdum*" ! -name ".*history*" -type f  -printf "%f\n" ); do
 	check_exist ~/$file.dtbak
-	if [ $? == 2 ]; then
+	retlink=$?
+	if [ $retlink == 2 ]; then
         unlink_file ~/$file
 		mv -f ~/$file{.dtbak,}
-    elif [ $? == 3 ]; then
+    elif [ $retlink == 3 ]; then
 		unlink_file ~/$file
 	fi
 done
@@ -50,10 +51,11 @@ done
 for file in .zshrc .zshrc-theme
 do
 	check_exist ~/$file.dtbak
-	if [ $? == 2 ]; then
+	retconf=$?
+	if [ $retconf == 2 ]; then
 		unlink_file ~/$file
         mv -f ~/$file{.dtbak,}
-	elif [ $? == 3 ]; then
+	elif [ $retconf == 3 ]; then
 		unlink_file ~/$file
 	fi
 done 

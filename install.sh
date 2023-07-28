@@ -47,10 +47,11 @@ check_os
 # Backup dotfiles and link to local versions
 for file in $(find ~/dotfiles -maxdepth 1 -name ".*" ! -name ".zshrc*" ! -name ".zcompdum*" ! -name ".*history*" -type f  -printf "%f\n" ); do
 	check_exist $file
-	if [ $? == 2 ]; then
+	stat_dot=$?
+	if [ $stat_dot == 2 ]; then
 		unlink_mv_file ~/$file
 		ln -s ~/dotfiles/$file ~/$file
-	elif [ $? == 3 ]; then
+	elif [ $stat_dot == 3 ]; then
 		ln -s ~/dotfiles/$file ~/$file
 	fi
 done
