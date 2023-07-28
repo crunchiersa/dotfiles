@@ -41,7 +41,9 @@ for file in $(find ~/dotfiles -maxdepth 1 -name ".*" ! -name ".zshrc*" ! -name "
 	if [ $? == 2 ]; then
         unlink_file ~/$file
 		mv -f ~/$file{.dtbak,}
-    fi
+    elif [ $? == 3 ]; then
+		unlink_file ~/$file
+	fi
 done
 
 # Unlink or move existing .zshrc config or .zshrc-theme 
@@ -51,6 +53,8 @@ do
 	if [ $? == 2 ]; then
 		unlink_file ~/$file
         mv -f ~/$file{.dtbak,}
+	elif [ $? == 3 ]; then
+		unlink_file ~/$file
 	fi
 done 
 
