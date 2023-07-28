@@ -116,7 +116,4 @@ PATH="$HOME/bin:$HOME/nsupdate:$HOME/ansible:$PATH"
 source $HOME/.zshrc-theme
 HISTSIZE=1000
 HISTFILESIZE=2000
-HISTTIMEFORMAT="%Y-%m-%d %T "
-export EDITOR=vim%
-source $HOME/.bash_aliases
 export EDITOR=vim
