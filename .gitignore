@@ -88,3 +88,6 @@ Thumbs.db
 #######
 *.swp
 *.swo
+
+# File to inidicate dotfiles are installed #
+version.installed

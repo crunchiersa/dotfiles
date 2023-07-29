@@ -63,5 +63,6 @@ done
 # Remove dotfiles-folder in home-directory.
 rm -rf $HOME/dotfiles
 
+rm ~/dotfiles/version.installed
 echo "Removal done."
 exit 0

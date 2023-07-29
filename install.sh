@@ -79,4 +79,5 @@ else
 fi
 
 echo "Installation done."
+touch ~/dotfiles/version.installed
 exit 0
